@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<form method="post">
+    <div class="form-group">
+        <label>Titulo: </label>
+        {{ form_tarefas.titulo }}
+    </div>
+    <div class="form-group">
+        <label>Descrição: </label>
+        {{ form_tarefas.descricao }}
+    </div>
+    <div class="form-group">
+        <label>Data de Expiração: </label>
+        {{ form_tarefas.data_expiracao }}
+    </div>
+    <div class="form-group">
+        <label>Propriedade: </label>
+        {{ form_tarefas.propriedade }}
+    </div>
+</form>
+
+{% endblock conteudo %}
