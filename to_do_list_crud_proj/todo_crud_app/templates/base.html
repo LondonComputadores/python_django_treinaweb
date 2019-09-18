@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
 <head>
     <meta chartset="UTF-8">
@@ -8,7 +9,7 @@
 </head>
 <body>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#home">Task Manager - TreinaWeb</a>
+        <a class="navbar-brand" href="{% url 'listar_tarefas' %}">TreinaWeb</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,20 +19,29 @@
               <a class="nav-link" href="{% url 'listar_tarefas' %}">Listar Tarefas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Features">Features</a>
+              <a class="nav-link" href="{% url 'cadastrar_tarefas' %}">Cadastrar Tarefas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'cadastrar_usuarios' %}">Cadastrar Usuários</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'deslogar_usuario' %}">Logout</a>
             </li>            
           </ul>
         </div>
      </nav>
 
-     <main class="container">
+<main class="container">
 
-     <h1>Listagem de tarefas</h1>
+{% block conteudo %}
+{% endblock conteudo %}
+     
+     {% comment %} <h1>Listagem de tarefas</h1>
      <h3>Listagem de tarefas H3</h3>
      <span style='color:red;font-weight: bold'> {{ nome_tarefa }} </span>
      <p>Listagem de tarefas parágrafos</p>
-     <p> {{ cadastrar_tarefas }} </p>
-     </main>
+     <p> {{ cadastrar_tarefas }} </p> {% endcomment %}
+</main>
 
 </body>
 </html>

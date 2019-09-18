@@ -1,0 +1,26 @@
+{% block conteudo %}
+<form method="post">
+    {% csrf_token %}
+    {% for message in messages %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="form-group">
+        {{ form_usuarios.username.errors }}
+        <label>Nome Usuario:</label>
+        {{form_usuarios.username | addclass:'form-control'}}
+    </div>
+
+    <div class="form-group">
+        {{ form_usuarios.password.errors }}
+        <label>Senha:</label>
+        {{form_usuarios.password | addclass:'form-control'}}
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Entrar" class="btn btn-primary">
+    </div>
+
+</form>
+{% endblock conteudo %}
